@@ -1,0 +1,48 @@
+---
+title: "R Markdown"
+output: html_document
+---
+
+`r format(Sys.time(), "%d %B, %Y")`
+
+```{r include = FALSE}
+library(leaflet)
+m <- leaflet()
+m <- addTiles(m)
+m <- addMarkers(m,lng=35.4444,lat=30.3285,popup="Petra")
+m <- addMarkers(m,lng=78.0422,lat=27.1750,popup="Taj Mahal")
+m <- addMarkers(m,lng=-88.5678,lat=20.6843,popup="Chichen Itza")
+m <- addMarkers(m,lng=-43.2105,lat=-22.9519,popup="Christ the Redeemer")
+m <- addMarkers(m,lng=12.4922,lat=41.8902,popup="Colosseum")
+m <- addMarkers(m,lng=116.5704,lat=40.4319,popup="Great Wall of China")
+m <- addMarkers(m,lng=72.5450,lat=-13.1631,popup="Machu Picchu (Machu Pikchu)")
+
+m <- addPolylines(m, lat=c(30.3285,30.3285), lng=c(35.4444,35.4444))
+m <- addPolylines(m, lat=c(30.3285,27.175), lng=c(35.4444,78.0422))
+m <- addPolylines(m, lat=c(30.3285,20.6843), lng=c(35.4444,-88.5678))
+m <- addPolylines(m, lat=c(30.3285,-22.9519), lng=c(35.4444,-43.2105))
+m <- addPolylines(m, lat=c(30.3285,41.8902), lng=c(35.4444,12.4922))
+m <- addPolylines(m, lat=c(30.3285,40.4319), lng=c(35.4444,116.5704))
+m <- addPolylines(m, lat=c(30.3285,-13.1631), lng=c(35.4444,72.545))
+m <- addPolylines(m, lat=c(27.175,27.175), lng=c(78.0422,78.0422))
+m <- addPolylines(m, lat=c(27.175,20.6843), lng=c(78.0422,-88.5678))
+m <- addPolylines(m, lat=c(27.175,-22.9519), lng=c(78.0422,-43.2105))
+m <- addPolylines(m, lat=c(27.175,41.8902), lng=c(78.0422,12.4922))
+m <- addPolylines(m, lat=c(27.175,40.4319), lng=c(78.0422,116.5704))
+m <- addPolylines(m, lat=c(27.175,-13.1631), lng=c(78.0422,72.545))
+m <- addPolylines(m, lat=c(20.6843,20.6843), lng=c(-88.5678,-88.5678))
+m <- addPolylines(m, lat=c(20.6843,-22.9519), lng=c(-88.5678,-43.2105))
+m <- addPolylines(m, lat=c(20.6843,41.8902), lng=c(-88.5678,12.4922))
+m <- addPolylines(m, lat=c(20.6843,40.4319), lng=c(-88.5678,116.5704))
+m <- addPolylines(m, lat=c(20.6843,-13.1631), lng=c(-88.5678,72.545))
+m <- addPolylines(m, lat=c(-22.9519,-22.9519), lng=c(-43.2105,-43.2105))
+m <- addPolylines(m, lat=c(-22.9519,41.8902), lng=c(-43.2105,12.4922))
+m <- addPolylines(m, lat=c(-22.9519,40.4319), lng=c(-43.2105,116.5704))
+m <- addPolylines(m, lat=c(-22.9519,-13.1631), lng=c(-43.2105,72.545))
+m <- addPolylines(m, lat=c(41.8902,41.8902), lng=c(12.4922,12.4922))
+m <- addPolylines(m, lat=c(41.8902,40.4319), lng=c(12.4922,116.5704))
+m <- addPolylines(m, lat=c(41.8902,-13.1631), lng=c(12.4922,72.545))
+m <- addPolylines(m, lat=c(40.4319,40.4319), lng=c(116.5704,116.5704))
+m <- addPolylines(m, lat=c(40.4319,-13.1631), lng=c(116.5704,72.545))
+m <- addPolylines(m, lat=c(-13.1631,-13.1631), lng=c(72.545,72.545))
+```
